@@ -1,14 +1,22 @@
 
-# shellcheck disable=2030,2031,2154
 
-set -e -u -o pipefail
 
-# shellcheck disable=2206
+
+
+
+
+
+
+
+
+
+
+
+
 declare -a docker_run_options=(${RUN_OR_DOCKER_OPTIONS-})
 RUN_OR_DOCKER_PULL=${RUN_OR_DOCKER_PULL:-false}
 RUN_OR_DOCKER_PUSH=${RUN_OR_DOCKER_PUSH:-false}
 
-run() (
   verbose=${RUN_OR_DOCKER_VERBOSE:-false}
   bin=$(dirname "${BASH_SOURCE[1]}")
   self=$(basename "${BASH_SOURCE[1]}")
@@ -58,13 +66,7 @@ run() (
 
   if [[ $rc -eq 0 ]]; then
     run-local "$@"
-  else
-    $verbose &&
-      echo "Can't run '$self' locally: ${err#FAIL:\ }" >&2
-    echo "Running '$self' with docker..." >&2
-    run-docker "$@"
-  fi
-#!/bash
+#!/bin/bash
 
 # shellcheck disable=2030,2031,2154
 
@@ -162,7 +164,7 @@ run-docker() (
   )
   for arg; do
     if [[ $arg == "$root"/* ]]; then
-      arg=/home/host/${arg#"$root"/}
+      arg=/home/host/${arg#$root/}
     fi
     args+=("$arg")
   done
@@ -377,7 +379,7 @@ build-docker-image() (
   (
     dockerfile
     bin=$(dirname "$0")
-    bin=${bin#"$root"/}
+    bin=${bin#$root/}
     if [[ $bin == bin ]]; then
       cmd "ENV PATH=/home/host/bin:\$PATH"
     else
