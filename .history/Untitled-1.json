@@ -1,0 +1,22 @@
+{
+  "github.copilot.advanced": {
+    "inlineSuggest": {
+      "mode": "local"
+    },
+    "chat": {
+      "mode": "local"
+    }
+  },
+  "keybindings": [
+    {
+      "key": "ctrl+.",
+      "command": "editor.action.addCommentLine",
+      "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+      "key": "ctrl+shift+l",
+      "command": "editor.action.commentLine",
+      "when": "editorTextFocus && !editorReadonly"
+    }
+  ]
+}
