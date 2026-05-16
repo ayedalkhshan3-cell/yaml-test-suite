@@ -1,7 +1,5 @@
 # ShellCheck configuration for yaml-test-suite
 source-path=SCRIPTDIR
-source-path=/mnt/chroot
-source-path="My Documents/scripts"
 external-sources=true
 enable=quote-safe-variables
 enable=check-unassigned-uppercase

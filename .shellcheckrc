@@ -1,5 +1,5 @@
 # ShellCheck configuration for yaml-test-suite
-source-path=SCRIPTORIA
+source-path=SCRIPTDIR
 source-path=/mnt/chroot
 source-path="My Documents/scripts"
 external-sources=true
