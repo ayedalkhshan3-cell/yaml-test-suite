@@ -1,6 +1,4 @@
 {
-<<<<<<< Updated upstream
-  "cSpell.words": ["yamlio"]
-=======
-  "cSpell.words": ["c"]
+  "name": "example",
+  "version": 1
 }
